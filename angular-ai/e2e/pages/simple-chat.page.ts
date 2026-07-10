@@ -18,7 +18,7 @@ export class SimpleChatPage {
     this.page = page;
     this.messageInput = page.locator('input[matInput]');
     this.sendButton = page.locator('button[aria-label="Send"]');
-    this.characterCounter = page.locator('mat-hint[align="end"]');
+    this.characterCounter = page.locator('mat-hint.mat-mdc-form-field-hint-end');
     this.validationError = page.locator('mat-error');
     this.chatMessages = page.locator('.message');
     this.userMessages = page.locator('.message-bubble.user');
@@ -27,7 +27,7 @@ export class SimpleChatPage {
   }
 
   async goto() {
-    await this.page.goto('/chat/simple');
+    await this.page.goto('/simple-chat');
   }
 
   async typeMessage(message: string) {
